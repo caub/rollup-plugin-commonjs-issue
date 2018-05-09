@@ -4,7 +4,6 @@
     [
       "@babel/env",
       {
-        "modules": false,
         "shippedProposals": true,
         "targets": {
           "browsers": [
@@ -18,7 +17,29 @@
     ]
   ],
   "plugins": [
-    "@babel/plugin-proposal-class-properties",
-    "@babel/plugin-proposal-object-rest-spread"
-  ]
+    "@babel/proposal-class-properties",
+    "@babel/proposal-object-rest-spread"
+  ],
+  "env": {
+    "rollup": {
+      "presets": [
+        "@babel/react",
+        [
+          "@babel/env",
+          {
+            "modules": false,
+            "shippedProposals": true,
+            "targets": {
+              "browsers": [
+                "last 2 versions",
+                "not ie > 0",
+                "not Android > 0"
+              ],
+              "node": "8.10"
+            }
+          }
+        ]
+      ]
+    }
+  }
 }

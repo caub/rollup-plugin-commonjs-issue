@@ -1,5 +1,5 @@
 import React from 'react';
-import injectSheet from 'react-jss';
+import injectSheet from 'react-jss/lib/injectSheet';
 
 const styles = {
   '@global': {
@@ -22,13 +22,13 @@ const styles = {
 };
 
 class Demo extends React.Component {
-  state = { foo: ' \u2714' };
+  state = {foo: ' \u2714'};
 
   render() {
-    const { classes, title } = this.props;
-    const { foo } = this.state;
+    const {classes, title} = this.props;
+    const {foo} = this.state;
     return (
-      <div className={classes.root} onClick={e => this.setState({ foo: foo + '.' })}>
+      <div className={classes.root} onClick={e => this.setState({foo: foo + '.'})}>
         {`${title} ${foo}`}
       </div>
     );
